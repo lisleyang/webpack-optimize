@@ -1,0 +1,41 @@
+const path = require('path')
+const HtmlWebpackPlugin    = require('html-webpack-plugin')
+//794
+module.exports = {
+  mode: 'production',
+  entry: {
+    'app':'./src/main.js'
+  },
+  output: {
+    path: path.resolve(process.cwd(), 'dist'),
+    filename: '[name].js'
+  },
+  //1852 2574
+  module: {
+      rules: [
+          {
+              test: /\.jsx?$/,
+              exclude: /node_modules/,
+              use: {
+                loader : "babel-loader",
+                options : {
+                  cacheDirectory : '.cache'
+                }
+              }
+              
+          }
+      ]
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      // 文件路徑
+      template: path.resolve(process.cwd(),'index.html'),
+      // src後面的路徑，前面不要加/ 
+      filename: 'index.html',
+      inject: 'body',
+      // 需要加載的js，對應entries屬性名
+      chunks: ['app']
+    })
+  ]
+
+}
