@@ -1,10 +1,13 @@
-import $ from 'jquery';
 import Vue from 'vue'
-import _ from 'lodash'
-
+import App from './App.vue'
 import '../less/main.less'
 
-console.log($)
-console.log(Vue)
-console.log(_)
-console.log(12345)
+new Vue({
+    el: '#app',
+    components: { App },
+    template: '<App/>',
+    mounted (){
+      var path = location.hash.match('[0-9a-zA-Z\-\/]+');
+      this.$data.actived = path;
+    }
+  })
