@@ -25,7 +25,7 @@ module.exports = {
     // }
   },
   module: {
-      //noParse : [/jquery|lodash/],
+      noParse : [/jquery|lodash/],
       rules: [
           {
               test: /\.jsx?$/,

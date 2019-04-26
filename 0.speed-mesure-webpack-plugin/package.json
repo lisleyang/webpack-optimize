@@ -4,10 +4,9 @@
   "description": "DllPlugin应用",
   "main": "webpack.config.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "cross-env NODE_ENV=development webpack-dev-server --inline --hot",
-    "build": "webpack --colors --display-modules",
-    "dll": "cross-env NODE_ENV=production webpack --config webpack.dll.config.js --colors --display-modules"
+    "build": "cross-env NODE_ENV=production webpack --colors --display-modules",
+    "analyse": "cross-env NODE_ENV=analyse webpack --colors --display-modules"
   },
   "keywords": [
     "dllplugin"

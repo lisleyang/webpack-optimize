@@ -7,15 +7,14 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const SpeedMeasurePlugin = require("speed-measure-webpack-plugin");
 const smp = new SpeedMeasurePlugin();
 
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+//const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = smp.wrap({
 
   mode: 'production',
 
   entry: {
-    'app':path.resolve(__dirname, 'src','js', 'main.js'),
-    'vendor' : path.resolve(__dirname,'src','js','vendor.js')
+    'app':path.resolve(__dirname, 'src', 'main.js')
   },
   output: {
     path: path.resolve(__dirname,'dist'),
@@ -66,6 +65,6 @@ module.exports = smp.wrap({
     }),
     new VueLoaderPlugin(),
 
-    new BundleAnalyzerPlugin()
+    //new BundleAnalyzerPlugin()
   ]
 })
