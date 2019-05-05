@@ -21,7 +21,6 @@ module.exports = {
         library: '[name]_[hash]',
         libraryTarget: 'this'
     },
-
     plugins: [
         new webpack.DllPlugin({
             // 定义程序中打包公共文件的入口文件vendor.js
