@@ -10,11 +10,22 @@ module.exports = {
     path: path.resolve(process.cwd(), 'dist'),
     filename: '[name].js'
   },
+  resolve : {
+    //不用在从node_modules里面一级一级的找，直接找到需要的文件
+    alias : {
+      'jquery' : path.resolve(__dirname,'./node_modules/jquery/dist/jquery.min.js'),
+      'lodash' : path.resolve(__dirname,'./node_modules/lodash/index.js'),
+      'vue' : path.resolve(__dirname,'./node_modules/vue/dist/vue.esm.js')
+    },
+    //resolve.modules告诉webpack去哪些目录下寻找第三方模块，默认值为['node_modules']，会依次查找./node_modules、../node_modules、../../node_modules。
+    modules : [path.resolve(__dirname, 'node_modules')]
+  },
   module: {
+      noParse : [/jquery|lodash/],
       rules: [
           {
               test: /\.jsx?$/,
-              //exclude: /node_modules/,
+              exclude: /node_modules/,
               use: "babel-loader"
           }
       ]
@@ -30,5 +41,4 @@ module.exports = {
       chunks: ['app']
     })
   ]
-
 }

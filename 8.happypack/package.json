@@ -6,8 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "cross-env NODE_ENV=development webpack-dev-server --inline --hot",
-    "build": "cross-env NODE_ENV=production webpack --colors --profile",
-    "dll": "cross-env NODE_ENV=production webpack --config webpack.dll.config.js --colors"
+    "build": "cross-env NODE_ENV=production webpack --colors --display-modules",
+    "happypack": "cross-env NODE_ENV=production webpack --colors --display-modules --config webpack.happypack.config.js",
+    "dll": "cross-env NODE_ENV=production webpack --config webpack.dll.config.js --colors --display-modules"
   },
   "keywords": [
     "dllplugin"
@@ -17,8 +18,8 @@
   "devDependencies": {
     "add-asset-html-webpack-plugin": "^3.1.3",
     "aws-sdk": "^2.270.1",
-    "cache-loader": "^2.0.1",
     "cross-env": "^5.2.0",
+    "happypack": "^5.0.1",
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.5.0",
     "speed-measure-webpack-plugin": "^1.3.1",
@@ -36,7 +37,6 @@
     "less": "^3.9.0",
     "less-loader": "^4.1.0",
     "lodash": "^4.17.11",
-    "moment": "^2.24.0",
     "vue": "^2.6.10"
   }
 }

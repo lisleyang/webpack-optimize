@@ -37,14 +37,24 @@ const webpackConfig = smp.wrap(merge(baseWebpackConfig, {
     new webpack.DefinePlugin({
       'process.env': env
     }),
-    new UglifyJsPlugin({
-      uglifyOptions: {
+    // new UglifyJsPlugin({
+    //   uglifyOptions: {
+    //     compress: {
+    //       warnings: false
+    //     }
+    //   },
+    //   parallel: true
+    // }),
+    new ParallelUglifyPlugin({
+      cacheDir: 'node_modules/.cache/',
+      uglifyJS:{
+        output: {
+          comments: false
+        },
         compress: {
           warnings: false
         }
-      },
-      sourceMap: config.build.productionSourceMap,
-      parallel: true
+      }
     }),
     // extract css into its own file
     new ExtractTextPlugin({
@@ -120,19 +130,7 @@ const webpackConfig = smp.wrap(merge(baseWebpackConfig, {
         to: config.build.assetsSubDirectory,
         ignore: ['.*']
       }
-    ]),
-
-    new ParallelUglifyPlugin({
-      cacheDir: '.cache/',
-      uglifyJS:{
-        output: {
-          comments: false
-        },
-        compress: {
-          warnings: false
-        }
-      }
-   })
+    ])
   ]
 }))
 

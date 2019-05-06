@@ -1,32 +1,22 @@
 const path = require('path')
 const HtmlWebpackPlugin    = require('html-webpack-plugin')
-//794
+const HappyPack = require('happypack');
+
 module.exports = {
   mode: 'production',
   entry: {
-    'app':'./src/main.js'
+    'app':'./src/js/main.js'
   },
   output: {
     path: path.resolve(process.cwd(), 'dist'),
     filename: '[name].js'
   },
-  //1852 2574
   module: {
       rules: [
           {
               test: /\.jsx?$/,
               exclude: /node_modules/,
-              // use: [{
-              //   loader: 'cache-loader',
-              //   options: {
-              //     cacheDirectory: './node_modules/.cache/babel-loader',
-              //     cacheIdentifier: '85939e9a'
-              //   }
-              // },{
-              //   loader : "babel-loader"
-              // }]
-              use : 'babel-loader'
-              
+              use: 'happypack/loader?id=babel'
           }
       ]
   },
@@ -39,6 +29,10 @@ module.exports = {
       inject: 'body',
       // 需要加載的js，對應entries屬性名
       chunks: ['app']
+    }),
+    new HappyPack({
+      id: 'babel',
+      loaders: [ 'babel-loader' ],
     })
   ]
 

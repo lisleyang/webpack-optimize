@@ -18,9 +18,9 @@ module.exports = {
               exclude: /node_modules/,
               use: {
                 loader : "babel-loader",
-                options : {
-                  cacheDirectory : '.cache'
-                }
+                // options : {
+                //   cacheDirectory : 'node_modules/.cache/babel-loader'
+                // }
               }
               
           }

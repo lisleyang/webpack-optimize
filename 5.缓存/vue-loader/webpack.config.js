@@ -22,33 +22,33 @@ module.exports = {
               loader : "babel-loader"
             }
           },
-          // {
-          //   test: /\.vue$/,
-          //   use : [{
-          //     loader: 'cache-loader',
-          //     options: {
-          //       cacheDirectory: './node_modules/.cache/vue-loader',
-          //       cacheIdentifier: '52f9a442'
-          //     }
-          //   },
-          //   /* config.module.rule('vue').use('vue-loader') */
-          //   {
-          //     loader: 'vue-loader',
-          //     options: {
-          //       compilerOptions: {
-          //         preserveWhitespace: false
-          //       },
-          //       cacheDirectory: './node_modules/.cache/vue-loader',
-          //       cacheIdentifier: '52f9a442'
-          //     }
-          //   }]
-          // }
           {
-            test : /\.vue$/,
-            use : {
-              loader : 'vue-loader'
-            }
+            test: /\.vue$/,
+            use : [{
+              loader: 'cache-loader',
+              options: {
+                cacheDirectory: './node_modules/.cache/vue-loader',
+                cacheIdentifier: '52f9a442'
+              }
+            },
+            /* config.module.rule('vue').use('vue-loader') */
+            {
+              loader: 'vue-loader',
+              options: {
+                compilerOptions: {
+                  preserveWhitespace: false
+                },
+                cacheDirectory: './node_modules/.cache/vue-loader',
+                cacheIdentifier: '52f9a442'
+              }
+            }]
           }
+          // {
+          //   test : /\.vue$/,
+          //   use : {
+          //     loader : 'vue-loader'
+          //   }
+          // }
       ]
   },
   plugins: [
