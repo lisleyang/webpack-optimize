@@ -1,5 +1,6 @@
 const path = require('path')
-const HtmlWebpackPlugin  = require('html-webpack-plugin')
+const HtmlWebpackPlugin    = require('html-webpack-plugin')
+const ModuleConcatenationPlugin = require('webpack/lib/optimize/ModuleConcatenationPlugin');
 
 module.exports = {
   mode: 'development',
@@ -24,14 +25,12 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      // 文件路徑
       template: path.resolve(process.cwd(),'index.html'),
-      // src後面的路徑，前面不要加/ 
       filename: 'index.html',
       inject: 'body',
-      // 需要加載的js，對應entries屬性名
       chunks: ['app']
-    })
+    }),
+    //new ModuleConcatenationPlugin(),
   ]
 
 }

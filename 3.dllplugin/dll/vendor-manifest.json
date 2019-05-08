@@ -1,1 +1,40 @@
-{"name":"vendor_c2d1711345946dc726e8","content":{"./node_modules/webpack/buildin/global.js":{"id":0,"buildMeta":{"providedExports":true}},"./node_modules/jquery/dist/jquery.js":{"id":2,"buildMeta":{"providedExports":true}},"./node_modules/lodash/lodash.js":{"id":3,"buildMeta":{"providedExports":true}},"./node_modules/webpack/buildin/module.js":{"id":4,"buildMeta":{"providedExports":true}},"./node_modules/vue/dist/vue.runtime.esm.js":{"id":5,"buildMeta":{"exportsType":"namespace","providedExports":["default"]}},"./node_modules/timers-browserify/main.js":{"id":6,"buildMeta":{"providedExports":true}},"./node_modules/setimmediate/setImmediate.js":{"id":7,"buildMeta":{"providedExports":true}},"./node_modules/process/browser.js":{"id":8,"buildMeta":{"providedExports":true}}}}
+{
+  "name": "vendor_c2d1711345946dc726e8",
+  "content": {
+    "./node_modules/webpack/buildin/global.js": {
+      "id": 0,
+      "buildMeta": { "providedExports": true }
+    },
+    "./node_modules/jquery/dist/jquery.js": {
+      "id": 2,
+      "buildMeta": { "providedExports": true }
+    },
+    "./node_modules/lodash/lodash.js": {
+      "id": 3,
+      "buildMeta": { "providedExports": true }
+    },
+    "./node_modules/webpack/buildin/module.js": {
+      "id": 4,
+      "buildMeta": { "providedExports": true }
+    },
+    "./node_modules/vue/dist/vue.runtime.esm.js": {
+      "id": 5,
+      "buildMeta": {
+        "exportsType": "namespace",
+        "providedExports": ["default"]
+      }
+    },
+    "./node_modules/timers-browserify/main.js": {
+      "id": 6,
+      "buildMeta": { "providedExports": true }
+    },
+    "./node_modules/setimmediate/setImmediate.js": {
+      "id": 7,
+      "buildMeta": { "providedExports": true }
+    },
+    "./node_modules/process/browser.js": {
+      "id": 8,
+      "buildMeta": { "providedExports": true }
+    }
+  }
+}

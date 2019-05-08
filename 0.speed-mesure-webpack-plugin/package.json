@@ -5,8 +5,8 @@
   "main": "webpack.config.js",
   "scripts": {
     "serve": "cross-env NODE_ENV=development webpack-dev-server --inline --hot",
-    "build": "cross-env NODE_ENV=production webpack --colors --display-modules",
-    "analyse": "cross-env NODE_ENV=analyse webpack --colors --display-modules"
+    "build": "cross-env NODE_ENV=production webpack --colors",
+    "analyse": "cross-env NODE_ENV=analyse webpack --colors"
   },
   "keywords": [
     "dllplugin"

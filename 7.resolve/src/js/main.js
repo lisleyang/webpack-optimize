@@ -8,3 +8,4 @@ $.ajax({
     url : 'https://www.baidu.com'
 })
 console.log(_)
+console.log(vue)

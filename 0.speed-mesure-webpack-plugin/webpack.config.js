@@ -10,9 +10,7 @@ const smp = new SpeedMeasurePlugin();
 //const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = smp.wrap({
-
   mode: 'production',
-
   entry: {
     'app':path.resolve(__dirname, 'src', 'main.js')
   },
@@ -20,7 +18,6 @@ module.exports = smp.wrap({
     path: path.resolve(__dirname,'dist'),
     filename: '[name].js'
   },
-
   module: {
       rules: [
           {

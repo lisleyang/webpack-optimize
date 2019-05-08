@@ -18,6 +18,7 @@ module.exports = {
     output: {
         path: path.join(__dirname, 'dll'),
         filename: '[name].dll.js',
+        //和webpack.DLlPlugin中的name要保持一致
         library: '[name]_[hash]',
         libraryTarget: 'this'
     },
@@ -30,6 +31,7 @@ module.exports = {
             path: path.join(__dirname, 'dll', '[name]-manifest.json'),
 
             // 定义打包的公共vendor文件对外暴露的函数名
+            // 和output.library保持一致
             name: '[name]_[hash]'
         })
     ]
